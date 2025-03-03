@@ -1,0 +1,81 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Complete los campos</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Selecciona un empleado</ion-label>
+        <ion-select [(ngModel)]="empleadoSeleccionado" placeholder="Elige un empleado">
+          <ion-select-option *ngFor="let empleado of empleados" [value]="empleado.NombreCompleto">
+            {{ empleado.NombreCompleto }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Selecciona un cliente</ion-label>
+        <ion-select [(ngModel)]="clienteSeleccionado" placeholder="Elige un cliente">
+          <ion-select-option *ngFor="let obra of obras" [value]="obra.NombreCompletoCliente">
+            {{ obra.NombreCompletoCliente }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>   
+
+      <ion-item class="ion-item-fecha">
+        <ion-label>Selecciona una fecha</ion-label>
+        <ion-datetime-button datetime="datetime" class="centrar-fecha"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime" presentation="date" [(ngModel)]="parteDeObra.Fecha" (ionChange)="capturarFecha($event)"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Introduce las horas"
+          labelPlacement="stacked"
+          type="number"
+          placeholder="Horas"
+          [(ngModel)]="parteDeObra.Horas"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Introduce el Concepto"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Concepto"
+          [(ngModel)]="parteDeObra.Concepto"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Agrega Observaciones"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Observaciones"
+          [(ngModel)]="parteDeObra.Observaciones"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Selecciona una direccion</ion-label>
+        <ion-select [(ngModel)]="direccionSeleccionada" placeholder="Elige una direccion">
+          <ion-select-option *ngFor="let obra of obras" [value]="obra.Direccion">
+            {{ obra.Direccion }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item> 
+
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<div class="center-button">
+  <ion-button fill="outline" (click)="ejecutarBoton()">Insertar</ion-button>
+</div>
+<br>

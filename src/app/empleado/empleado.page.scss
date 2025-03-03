@@ -1,0 +1,75 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  ion-title {
+    text-align: center;
+    width: 100%;
+  }
+  .center-card {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: none; /* Elimina restricciones de tamaño */
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between; /* Separa los elementos */
+    align-items: left; /* Asegura que los elementos estén alineados verticalmente */
+  }
+  
+  ion-avatar {
+    width: 50px;  /* Ajusta el tamaño de la imagen */
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .ion-item {
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
+  .boton-derecha {
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+  }
+
+  .card-item {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+  }
+
+    /* Definir un color personalizado */
+  .custom-header {
+    --background: #ff5733;
+  }
+
+  .content-background {
+    background: rgba(255, 87, 51, 0.25);  /* Color #ff5733 con 25% de opacidad */
+  }
+
+  /* Asegurar que el texto en el encabezado sea blanco para un buen contraste */
+  .custom-header ion-label {
+    color: white;
+}
+
+  

@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>PARTES DE OBRA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">PARTES DE OBRA</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-accordion-group expand="inset">
+    <ion-accordion class="custom-accordion" value="first">
+      <ion-item slot="header" class="custom-header">
+        <ion-label>Añadir Parte De Obra</ion-label>
+      </ion-item>
+      <div class="ion-padding content-background" slot="content">
+        <app-annadir-parte-de-obra></app-annadir-parte-de-obra>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+
+  <ion-list>
+    <ion-item *ngFor="let pdeObra of pdeObras" >
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ pdeObra.DireccionObra }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Nombre del Cliente:</strong> {{ pdeObra.NombreCompletoCliente}}</p>
+          <p><strong>Nombre del Empleado:</strong> {{ pdeObra.NombreCompletoEmpleado }}</p>
+          <p><strong>Fecha:</strong> {{ pdeObra.Fecha}}</p>
+          <p><strong>Horas:</strong> {{ pdeObra.Horas }} </p>
+          <p><strong>Concepto:</strong> {{ pdeObra.Concepto }} </p>
+          <p><strong>Observaciones:</strong> {{ pdeObra.Observaciones }} </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>PARTES DE OBRA</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,21 @@
+.center-button {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Asegura que esté alineado verticalmente si es necesario */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: 10px; /* Opcional: agrega un margen superior */
+  }
+
+  .image-container {
+    display: block;
+    margin: auto; /* Centra la imagen */
+    max-width: 100%; /* Evita que se desborde */
+    max-height: 100%;
+}
+  
+.image-container img {
+    width: 180px; /* Ajusta el tamaño */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Opcional */
+}

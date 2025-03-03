@@ -1,0 +1,56 @@
+  ion-card {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      max-width: none; /* Elimina restricciones de ancho */
+    }
+
+  #container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  ion-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  ion-card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: none; /* Elimina restricciones de ancho */
+  }
+  
+  /* Definir un color personalizado */
+  .custom-header {
+    --background: #ff5733;
+  }
+
+  .content-background {
+    background: rgba(249, 76, 41, 0.248);  /* Color #ff5733 con 25% de opacidad */
+  }
+
+  /* Asegurar que el texto en el encabezado sea blanco para un buen contraste */
+  .custom-header ion-label {
+    color: white;
+  }

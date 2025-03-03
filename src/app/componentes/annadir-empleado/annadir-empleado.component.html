@@ -1,0 +1,38 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Inserta un empleado</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-label>DNI</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce el DNI"[(ngModel)]="empleado.Dni"></ion-textarea>
+      </ion-item>
+      <ion-label>Nombre Completo del Empleado</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce el nombre completo del empleado"[(ngModel)]="empleado.NombreCompleto"></ion-textarea>
+      </ion-item>
+      <ion-label>Telefono del Empleado</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce el telefono del empleado"[(ngModel)]="empleado.Telefono"></ion-textarea>
+      </ion-item>
+      <ion-label>Rostro del empleado</ion-label>
+      <ion-item>
+        <input type="file" (change)="uploadImage($event)" accept="image/*">
+      </ion-item>
+
+      <ion-item *ngIf="empleado.Cara">
+        <ion-item *ngIf="empleado.Cara" class="image-container">
+          <img [src]="empleado.Cara" alt="Rostro del empleado">
+        </ion-item>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+
+<div class="center-button">
+  <ion-button fill="outline" (click)="ejecutarBoton()">Insertar</ion-button>
+</div>
+<br>

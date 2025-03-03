@@ -1,0 +1,7 @@
+.center-button {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Asegura que esté alineado verticalmente si es necesario */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: 10px; /* Opcional: agrega un margen superior */
+  }

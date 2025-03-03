@@ -1,0 +1,35 @@
+<ion-list [inset]="true">
+  <ion-item *ngFor="let pdeObra of pdeObras">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ pdeObra.DireccionObra }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Nombre del Cliente:</strong> {{ pdeObra.NombreCompletoCliente }}</p>
+        <p><strong>Nombre del Empleado:</strong> {{ pdeObra.NombreCompletoEmpleado }}</p>
+        <p><strong>Fecha:</strong> {{ pdeObra.Fecha }}</p>
+        <p><strong>Horas:</strong> {{ pdeObra.Horas }}</p>
+        <p><strong>Concepto:</strong> {{ pdeObra.Concepto }}</p>
+        <p><strong>Observaciones:</strong> {{ pdeObra.Observaciones }}</p>
+
+        <ion-button class="boton-derecha" color="danger" shape="round" (click)="eliminarDatos(pdeObra.id)">
+          <ion-icon name="close-circle-outline"></ion-icon>Eliminar
+        </ion-button>
+
+        <ion-accordion-group expand="inset">
+
+          <ion-accordion class="custom-accordion" value="first">
+            <ion-item slot="header" class="custom-header">
+              <ion-label>Modificar Parte De Obra</ion-label>
+            </ion-item>
+            <div class="ion-padding content-background" slot="content">
+              <app-modificar-parte-de-obra [pdeobraId]="pdeObra.id"></app-modificar-parte-de-obra>
+            </div>
+          </ion-accordion>
+
+        </ion-accordion-group>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>

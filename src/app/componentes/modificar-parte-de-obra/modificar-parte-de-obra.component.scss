@@ -1,0 +1,19 @@
+.center-button {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Asegura que esté alineado verticalmente si es necesario */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: 10px; /* Opcional: agrega un margen superior */
+}
+
+.ion-item-fecha {
+  display: flex;
+  align-items: center; /* Mantiene el contenido alineado verticalmente */
+  justify-content: space-between; /* Separa el label y el botón */
+  width: 100%;
+}
+  
+.centrar-fecha {
+  margin-right: 230px; /* Ajusta el desplazamiento hacia la derecha */
+}
+  

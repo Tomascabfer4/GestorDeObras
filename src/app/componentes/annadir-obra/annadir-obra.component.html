@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Inserta una obra</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-label>Localidad</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce localidad" [(ngModel)]="obra.Localidad"></ion-textarea>
+      </ion-item>
+      <ion-label>Dirección</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce direccion"[(ngModel)]="obra.Direccion"></ion-textarea>
+      </ion-item>
+      <ion-label>Nombre Completo del Cliente</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce nombre completo del cliente"[(ngModel)]="obra.NombreCompletoCliente"></ion-textarea>
+      </ion-item>
+      <ion-label>Telefono del Cliente</ion-label>
+      <ion-item>
+        <ion-textarea labelPlacement="floating" fill="outline" placeholder="Introduce telefono del cliente"[(ngModel)]="obra.TelefonoCliente"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<div class="center-button">
+  <ion-button fill="outline" (click)="ejecutarBoton()">Insertar</ion-button>
+</div>
+<br>

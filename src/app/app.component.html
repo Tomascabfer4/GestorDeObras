@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <div class="header-container">
+            <div>
+              <ion-list-header>GESTIONE SU OBRA</ion-list-header>
+              <ion-note>gestionesuobra.net</ion-note>
+            </div>
+            <ion-thumbnail>
+              <img alt="Logo Obrero Naranja" src="assets/icon/obra_icono.png" />
+            </ion-thumbnail>
+          </div>
+          @for (p of appPages; track p; let i = $index) {
+            <ion-menu-toggle auto-hide="false">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          }
+        </ion-list>
+      </ion-content>
+        <!--
+        <ion-item>
+          <ion-toggle [(ngModel)]="paletteToggle" (ionChange)="toggleChange($event)" justify="space-between"
+            >Dark Mode</ion-toggle
+          >
+        </ion-item>
+        -->
+    </ion-menu>
+    
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

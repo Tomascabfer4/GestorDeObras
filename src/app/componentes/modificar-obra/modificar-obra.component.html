@@ -1,0 +1,31 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Complete los campos</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    
+    <ion-list>
+      <ion-item>
+        <ion-input 
+          label="Localidad"
+          [(ngModel)]="obra.Localidad"
+          [placeholder]="obra.Localidad"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Dirección" [(ngModel)]="obra.Direccion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Nombre Completo del Cliente" [(ngModel)]="obra.NombreCompletoCliente"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Telefono del Cliente" [(ngModel)]="obra.TelefonoCliente"></ion-input>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+</ion-card>
+<div class="center-button">
+  <ion-button id="present-alert" fill="outline" (click)="ejecutarBoton()">Actualizar</ion-button>
+</div>

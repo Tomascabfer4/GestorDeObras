@@ -1,0 +1,7 @@
+{
+  "name": "gestionDeObras",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>OBRAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">OBRAS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-accordion-group expand="inset">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Añadir Obra</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <app-annadir-obra></app-annadir-obra>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  
+  <ion-list>
+    <ion-item *ngFor="let obra of obras" >
+      <ion-card >
+        <ion-card-header>
+          <ion-card-title>{{ obra.Localidad }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Direccion:</strong> {{ obra.Direccion }}</p>
+          <p><strong>Nombre Completo del Cliente:</strong> {{ obra.NombreCompletoCliente }}</p>
+          <p><strong>Telefono del Cliente:</strong> {{ obra.TelefonoCliente }} </p>
+          <ion-button class="boton-derecha" color="danger" shape="round" (click)="eliminarDatos(obra.id)">
+            <ion-icon name="close-circle-outline"></ion-icon>Eliminar
+          </ion-button>
+          <ion-accordion-group expand="inset">
+            <ion-accordion class="custom-accordion" value="first">
+              <ion-item slot="header" class="custom-header">
+                <ion-label>Modificar Obra</ion-label>
+              </ion-item>
+              <div class="ion-padding content-background" slot="content">
+                <app-modificar-obra [obraId]="obra.id"></app-modificar-obra>
+              </div>
+            </ion-accordion>
+
+            <ion-accordion class="custom-accordion" value="second">
+              <ion-item slot="header" class="custom-header">
+                <ion-label>Partes De Obra</ion-label>
+              </ion-item>
+              <div class="ion-padding content-background" slot="content">
+                <app-listar-parte-de-obra [pdeObraDireccion]="obra.Direccion"></app-listar-parte-de-obra>
+              </div>
+            </ion-accordion>
+
+          </ion-accordion-group>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>OBRAS</ion-title>
+  </ion-toolbar>
+</ion-footer>

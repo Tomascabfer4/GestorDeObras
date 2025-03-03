@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>EMPLEADOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">EMPLEADOS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-accordion-group expand="inset">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Añadir Empleado</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <app-annadir-empleado></app-annadir-empleado>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+
+  <ion-list>
+    <ion-item *ngFor="let empleado of empleados" class="centered-item">
+      <ion-card class="center-card">
+        <ion-card-header class="card-header">
+
+          <ion-item class="card-item">
+            <ion-avatar slot="start">
+              <img [src]="empleado.Cara" alt="Foto de {{ empleado.NombreCompleto }}"/>
+            </ion-avatar>
+            <ion-label>{{empleado.NombreCompleto}}</ion-label>
+            <ion-button class="boton-derecha" color="danger" shape="round" (click)="eliminarDatos(empleado.id)">
+              <ion-icon name="close-circle-outline"></ion-icon>Eliminar
+            </ion-button>
+          </ion-item>
+          
+        </ion-card-header>
+  
+        <ion-card-content>
+
+          <!-- Acordeón para mostrar información del empleado -->
+          <ion-accordion-group expand="inset">
+            <ion-accordion value="info">
+              <ion-item slot="header">
+                <ion-label>Información del Empleado</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <p><strong>DNI:</strong> {{ empleado.Dni }}</p>
+                <p><strong>Teléfono:</strong> {{ empleado.Telefono }}</p>
+
+                <ion-accordion-group expand="inset">
+                  <ion-accordion class="custom-accordion" value="first">
+                    <ion-item slot="header" class="custom-header">
+                      <ion-label>Modificar Empleado</ion-label>
+                    </ion-item>
+                    <div class="ion-padding content-background" slot="content">
+                      <!--Con [empleadoId] definimos una variable con el valor del id del empleado,
+                      esto es para pasarselo al componente modificarempleado, para saber que
+                      obra es la que tiene que ser modificada, como el id lo crea firebase
+                      se le pasa en minuscula sino no leera el id de la obra-->
+                      <app-modificar-empleado [empleadoId]="empleado.id"></app-modificar-empleado>
+                    </div>
+                  </ion-accordion>
+                </ion-accordion-group>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>EMPLEADOS</ion-title>
+  </ion-toolbar>
+</ion-footer>
