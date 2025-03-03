@@ -1,4 +1,7 @@
+
+
 <ion-list [inset]="true">
+  <p *ngIf="pdeObras.length === 0" class="mensaje-vacio">Aún no hay partes de obra</p>
   <ion-item *ngFor="let pdeObra of pdeObras">
     <ion-card>
       <ion-card-header>
